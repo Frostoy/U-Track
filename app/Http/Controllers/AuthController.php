@@ -9,8 +9,12 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+<<<<<<< HEAD
     public function showRegister() 
     {
+=======
+    public function showRegister() {
+>>>>>>> e97f6b1 (feat: add authentication frontend pages)
         return view('auth.register');
     }
 
