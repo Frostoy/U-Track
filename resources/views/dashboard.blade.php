@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
+@section('title', 'Dashboard')
+
 @section('content')
     <div class="min-h-screen bg-[#9ea6ae] flex flex-col">
-        <x-dashboard.navbar />
+        <x-navbar />
 
         <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 px-6 mt-6">
             Selamat datang di dashboard, Admin!
@@ -54,7 +56,7 @@
 
         <!-- Fixed action buttons at bottom right -->
         <div class="fixed bottom-6 right-6 flex gap-4 bg-[#9ea6ae] p-4 rounded-lg shadow-lg z-50">
-            <x-dashboard.action-buttons />
+            <x-action-buttons />
         </div>
     </div>
 @endsection
