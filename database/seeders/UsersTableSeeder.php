@@ -14,13 +14,13 @@ class UsersTableSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'Admin User',
+            'username' => 'Admin User',
             'email' => 'admin@example.com',
             'password' => Hash::make('password'),
         ]);
 
         User::create([
-            'name' => 'Nurse User',
+            'username' => 'Nurse User',
             'email' => 'nurse@example.com',
             'password' => Hash::make('password'),
         ]);

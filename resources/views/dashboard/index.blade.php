@@ -3,6 +3,11 @@
 @section('title', 'Dashboard')
 
 @section('content')
+    @session('success')
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+            {{ session('success') }}
+        </div>
+    @endsession
     <div class="min-h-screen bg-[#9ea6ae] flex flex-col">
         <x-navbar />
 
@@ -14,7 +19,7 @@
             <!-- Left Column -->
             <div class="flex flex-col flex-1 max-w-md min-h-[600px] space-y-6">
                 <x-dashboard.stat-card />
-                
+
                 <!-- Stock list grows to fill remaining height -->
                 <div class="flex-grow">
                     <x-dashboard.stock-list class="h-full" />
@@ -29,27 +34,15 @@
                 </div>
 
                 <div class="flex gap-4 flex-wrap">
-                    <x-dashboard.pull-down-card
-                        title="Riwayat Terbaru"
-                        contentId="historyContent"
-                        :items="[
-                            '12/08 : + Kotak P3K (5 unit)',
-                            '14/08 : - Paracetamol (3 strip)',
-                            '15/08 : - Alkohol (2 botol)',
-                            '16/08 : + Masker (20 pcs)',
-                        ]"
-                        bg="bg-teal-300"
-                        innerBg="bg-teal-200/80"
-                        class="flex-1 min-w-[300px]"
-                    />
-                    <x-dashboard.pull-down-card
-                        title="Notifikasi"
-                        contentId="notifContent"
-                        :items="['Stok Paracetamol tinggal 3', 'Perban habis, perlu restock']"
-                        bg="bg-yellow-400"
-                        innerBg="bg-yellow-200/80"
-                        class="flex-1 min-w-[300px]"
-                    />
+                    <x-dashboard.pull-down-card title="Riwayat Terbaru" contentId="historyContent" :items="[
+                        '12/08 : + Kotak P3K (5 unit)',
+                        '14/08 : - Paracetamol (3 strip)',
+                        '15/08 : - Alkohol (2 botol)',
+                        '16/08 : + Masker (20 pcs)',
+                    ]"
+                        bg="bg-teal-300" innerBg="bg-teal-200/80" class="flex-1 min-w-[300px]" />
+                    <x-dashboard.pull-down-card title="Notifikasi" contentId="notifContent" :items="['Stok Paracetamol tinggal 3', 'Perban habis, perlu restock']"
+                        bg="bg-yellow-400" innerBg="bg-yellow-200/80" class="flex-1 min-w-[300px]" />
                 </div>
             </div>
         </div>
