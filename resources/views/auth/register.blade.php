@@ -24,13 +24,13 @@
         <form action="{{ route('register.submit') }}" method="POST" class="space-y-4">
             @csrf
             <div>
-                <label class="text-gray-700">Email Address</label>
-                <input type="email" name="email" placeholder="Enter your email address"
+                <label class="text-gray-700">Name</label>
+                <input type="text" name="username" placeholder="Enter your name"
                     class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
             </div>
             <div>
-                <label class="text-gray-700">Full Name</label>
-                <input type="text" name="username" placeholder="Enter your full name"
+                <label class="text-gray-700">Email Address</label>
+                <input type="email" name="email" placeholder="Enter your email address"
                     class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
             </div>
             <div>
