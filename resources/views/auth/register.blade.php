@@ -30,7 +30,7 @@
             </div>
             <div>
                 <label class="text-gray-700">Full Name</label>
-                <input type="text" name="name" placeholder="Enter your full name"
+                <input type="text" name="username" placeholder="Enter your full name"
                     class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
             </div>
             <div>
