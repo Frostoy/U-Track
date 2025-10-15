@@ -17,13 +17,28 @@
                 class="object-cover h-full w-full">
         </div>
 
-        <!-- Bagian Kanan (Form) -->
-        <div class="w-1/2 p-10 flex flex-col justify-center">
-            <div class="text-center mb-6">
-                <img draggable="false" src="{{ asset('images/utrack-logo.png') }}" alt="U-Track"
-                    class="mx-auto w-20 mb-2">
-                <h2 class="text-2xl font-bold text-gray-800">Create an account</h2>
+        <form action="{{ route('register.submit') }}" method="POST" class="space-y-4">
+            @csrf
+            <div>
+                <label class="text-gray-700">Name</label>
+                <input type="text" name="username" placeholder="Enter your name"
+                    class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
             </div>
+            <div>
+                <label class="text-gray-700">Email Address</label>
+                <input type="email" name="email" placeholder="Enter your email address"
+                    class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+            </div>
+            <div>
+                <label class="text-gray-700">Password</label>
+                <input type="password" name="password" placeholder="Create your password"
+                    class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+            </div>
+            <button type="submit"
+                class="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 rounded-lg transition">
+                Register Now
+            </button>
+        </form>
 
             <form action="{{ route('register.submit') }}" method="POST" class="space-y-4">
                 @csrf
