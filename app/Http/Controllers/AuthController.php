@@ -17,18 +17,20 @@ class AuthController extends Controller
     public function register(Request $request) {
         // Validate input
         $request->validate([
-            'username' => 'required|string|unique:users',
-            'password' => 'required|max:255',
-            'email' => 'required|email|unique:users',
+            'username' => 'required|unique:users',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8',
         ]);
 
         // Create user
-        User::create([
+        \App\Models\User::create([
             'username' => $request->username,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            // Hash the password before storing it
+            'password' => \Illuminate\Support\Facades\Hash::make($request->password),
         ]);
 
+        // Redirect to the login page with a success message
         return redirect()->route('login')->with('success', 'Registration successful. Please log in.');
     }
 
@@ -36,19 +38,21 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function login(Request $request) {        
+    public function login(Request $request) {
+        // Validate input
         $request->validate([
-            'email' => 'required|string|email',
+            'username' => 'required|string',
             'password' => 'required|string',
         ]);
 
         // Attempt to authenticate the user
-        if (Auth::attempt($request->only(['email','password']))){
+        if (Auth::attempt($request->only(['username','password']))){
             //Generate new session
             $request->session()->regenerate();
             //Redirect user to dashboard
             return redirect()->route('dashboard')->with('success','Login successful.');
         };
+
 
         // Authentication failed, redirect back with error
         return back()->withErrors([
