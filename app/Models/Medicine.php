@@ -15,6 +15,6 @@ class Medicine extends Model
 
     public function inventoryLogs()
     {
-        return $this->hasMany(InventoryLog::class);
+        return $this->hasMany(InventoryLog::class, 'item_id');
     }
 }

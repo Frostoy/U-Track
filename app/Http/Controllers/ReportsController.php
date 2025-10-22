@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\InventoryLog;
 
 class ReportsController extends Controller
 {
     public function index()
     {
-        return view('reports');
+        $logs = InventoryLog::latest()->paginate(20);
+        return view('reports.index', compact('logs'));
     }
 }

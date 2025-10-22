@@ -2,10 +2,12 @@
   <table class="w-full border-collapse">
     <thead class="bg-teal-200 text-left">
       <tr>
-        <th class="p-3">Tanggal</th>
-        <th class="p-3">Jenis</th>
+        <th class="p-3">ID</th>
+        <th class="p-3">User</th>
+        <th class="p-3">Aksi</th>
         <th class="p-3">Barang</th>
-        <th class="p-3">Jumlah</th>
+        <th class="p-3">Perubahan</th>
+        <th class="p-3">Tanggal</th>
       </tr>
     </thead>
     <tbody class="divide-y">
