@@ -16,12 +16,11 @@
             <img src="{{ asset('images/medical-team.jpg') }}" alt="Medical Team" class="object-cover h-full w-full">
         </div>
 
-        <form action="{{ route('login.submit') }}" method="POST" class="space-y-4">
-            @csrf
-            <div>
-                <label class="text-gray-700">Username</label>
-                <input type="text" name="username" placeholder="Enter your name"
-                    class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+        <!-- Bagian Kanan (Form Login) -->
+        <div class="w-1/2 p-10 flex flex-col justify-center">
+            <div class="text-center mb-6">
+                <img src="{{ asset('images/utrack-logo.png') }}" alt="U-Track" class="mx-auto w-20 mb-2">
+                <h2 class="text-2xl font-bold text-gray-800">Login</h2>
             </div>
 
             <form action="{{ route('login.submit') }}" method="POST" class="space-y-4">

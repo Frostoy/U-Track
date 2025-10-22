@@ -11,9 +11,12 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory');
-    Route::get('/reports', [ReportsController::class, 'index'])->name('reports');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('role:admin');
+    Route::resource('inventory', InventoryController::class)
+        ->names(['index' => 'inventory.index'])
+        ->parameters(['inventory' => 'medicine'])
+        ->middleware('role:admin');
+    Route::get('/reports', [ReportsController::class, 'index'])->name('reports.index')->middleware('role:admin,user');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 

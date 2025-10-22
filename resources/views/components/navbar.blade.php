@@ -22,11 +22,11 @@
                         class="{{ request()->routeIs('dashboard') ? 'font-semibold underline underline-offset-4 text-black' : 'text-gray-700 hover:underline' }}">
                         Dashboard
                     </a>
-                    <a href="{{ route('inventory') }}"
+                    <a href="{{ route('inventory.index') }}"
                         class="{{ request()->routeIs('inventory') ? 'font-semibold underline underline-offset-4 text-black' : 'text-gray-700 hover:underline' }}">
                         Inventaris
                     </a>
-                    <a href="{{ route('reports') }}"
+                    <a href="{{ route('reports.index') }}"
                         class="{{ request()->is('laporan*') ? 'font-semibold underline underline-offset-4 text-black' : 'text-gray-700 hover:underline' }}">
                         Laporan
                     </a>
