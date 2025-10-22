@@ -1,0 +1,35 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #1a1c23;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .nav-link {
+  color: #ccc;
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.admin-box {
+  background: #2a2c35;
+  color: white;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.table th {
+  background: #f1f1f1;
+}
