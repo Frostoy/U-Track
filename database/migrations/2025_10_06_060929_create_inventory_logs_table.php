@@ -13,16 +13,14 @@ return new class extends Migration
     {
         Schema::create('inventory_logs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('medicine_id');
-            $table->unsignedBigInteger('user_id');
-            $table->enum('type', ['in', 'out']);
-            $table->integer('quantity');
-            $table->text('note')->nullable();
+            $table->string('user')->nullable(); // who did it
+            $table->string('action'); // created, updated, deleted
+            $table->string('item_name'); // medicine name
+            $table->unsignedBigInteger('item_id')->nullable(); // link to medicines table
+            $table->json('changes')->nullable(); // store before/after data
             $table->timestamps();
-
-            $table->foreign('medicine_id')->references('id')->on('medicines')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
+
     }
 
     /**
