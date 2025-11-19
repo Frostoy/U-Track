@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <tr class="border-b hover:bg-gray-50 medicine-row" data-name="{{ strtolower($med->name) }}"
     data-category="{{ strtolower($med->category->name ?? '') }}">
     <td class="py-3">{{ $med->id }}</td>
@@ -25,13 +24,3 @@
         </div>
     </td>
 </tr>
-=======
-<tr>
-  <td class="p-3">{{ $id }}</td>
-  <td class="p-3">{{ $nama }}</td>
-  <td class="p-3">{{ $stok }}</td>
-  <td class="p-3 flex gap-2">
-    {{ $slot }}
-  </td>
-</tr>
->>>>>>> 6aa0144 (feat: implement functional inventory page, role system, and logs system  - added CRUD functionality for medicines - implemented role-based access (Admin/User) - integrated InventoryLog model to track user actions - added formatted change display on reports table - fixed authentication for logging user as Admin User - removed redundant queue types and old non-functional code)
