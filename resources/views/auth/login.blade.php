@@ -1,36 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | U-Track</title>
-    @vite('resources/css/app.css')
+    <title>U-Track | Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-200 flex justify-center items-center min-h-screen">
-    <div class="bg-gradient-to-b from-gray-100 to-yellow-100 rounded-2xl shadow-xl w-full max-w-4xl min-h-[80vh] flex flex-col justify-center items-center p-8 md:p-16 mx-4">
-        <!-- Logo -->
-        <img src="{{ asset('images/utrack-logo.png') }}" alt="U-Track" class="mx-auto w-40 mb-8">
 
-        <h2 class="text-3xl md:text-4xl font-bold mb-10">Login</h2>
-        
-        <form action="{{ route('login') }}" method="POST" class="w-full max-w-md space-y-6">
-            @csrf
-            <div>
-                <label class="block text-sm font-medium mb-1">Username:</label>
-                <input type="text" name="username" class="w-full rounded-full p-3 border focus:outline-none focus:ring-2 focus:ring-yellow-400">
-            </div>
-            <div>
-                <label class="block text-sm font-medium mb-1">Password:</label>
-                <input type="password" name="password" class="w-full rounded-full p-3 border focus:outline-none focus:ring-2 focus:ring-yellow-400">
-            </div>
-            <a href="#" class="block text-sm text-blue-600 text-left hover:underline">Forgot password?</a>
-            
-            <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-white w-full py-3 rounded-md font-semibold transition">Login</button>
-        </form>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-        <p class="mt-6 text-sm">Don’t have an account? 
-            <a href="{{ route('register') }}" class="text-blue-600 hover:underline">Register here</a>.
-        </p>
+    <div class="bg-white rounded-2xl shadow-lg flex w-[70%] h-[90vh] overflow-hidden">
+        <!-- Bagian Kiri (Gambar) -->
+        <div class="w-1/2">
+            <img src="{{ asset('images/medical-team.jpg') }}" alt="Medical Team" class="object-cover h-full w-full">
+        </div>
+
+        <!-- Bagian Kanan (Form Login) -->
+        <div class="w-1/2 p-10 flex flex-col justify-center">
+            <div class="text-center mb-6">
+                <img src="{{ asset('images/utrack-logo.png') }}" alt="U-Track" class="mx-auto w-20 mb-2">
+                <h2 class="text-2xl font-bold text-gray-800">Login</h2>
+            </div>
+
+            <form action="{{ route('login.submit') }}" method="POST" class="space-y-4">
+                @csrf
+                <div>
+                    <label class="text-gray-700">Username</label>
+                    <input type="text" name="username" placeholder="Enter your name" value="{{ old('username') }}"
+                        class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+                    @error('username')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div>
+                    <label class="text-gray-700">Password</label>
+                    <input type="password" name="password" placeholder="Enter your password"
+                        class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+                    @error('password')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 rounded-lg transition">
+                    Login Now
+                </button>
+            </form>
+
+            <p class="text-center text-gray-600 mt-4">
+                Don’t have an account?
+                <a href="{{ route('register') }}" class="text-blue-500 hover:underline">Register</a>
+            </p>
+        </div>
     </div>
+
 </body>
+
 </html>
