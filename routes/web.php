@@ -2,14 +2,24 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+<<<<<<< HEAD
+=======
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\ReportsController;
+>>>>>>> 82482a3fdd4df5a2e47f9e364c988bc47fa270a4
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return redirect('/login');
 });
 
+<<<<<<< HEAD
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+=======
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('role:admin');
     Route::resource('inventory', InventoryController::class)
@@ -31,3 +41,4 @@ Route::middleware('guest')->group(function () {
 // Route::get('/reports', function () {
 //     return view('reports/index');
 // });
+>>>>>>> 82482a3fdd4df5a2e47f9e364c988bc47fa270a4
