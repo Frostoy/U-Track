@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
 
 use App\Models\InventoryLog;
@@ -177,3 +177,4 @@ class DashboardController extends Controller
         return view('dashboard.index', compact('stats', 'recent', 'restock'));
     }
 }
+ 
