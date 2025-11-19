@@ -21,11 +21,11 @@
     $formattedChanges = implode(', ', $formattedChanges);
 @endphp
 
-<tr>
-    <td class="p-3">{{ $id }}</td>
-    <td class="p-3">{{ $user }}</td>
-    <td class="p-3">{{ $aksi }}</td>
-    <td class="p-3">{{ $barang }}</td>
-    <td class="p-3">{{ $formattedChanges }}</td>
-    <td class="p-3">{{ $tanggal }}</td>
+<tr class="border-b hover:bg-gray-50">
+    <td class="py-3 px-4 text-sm text-gray-700">{{ $id }}</td>
+    <td class="py-3 px-4 text-sm text-gray-700">{{ $user }}</td>
+    <td class="py-3 px-4 text-sm text-gray-700">{{ $aksi }}</td>
+    <td class="py-3 px-4 text-sm text-gray-700">{{ $barang }}</td>
+    <td class="py-3 px-4 text-sm text-gray-700">{{ $formattedChanges }}</td>
+    <td class="py-3 px-4 text-sm text-gray-700">{{ $tanggal }}</td>
 </tr>

@@ -11,14 +11,14 @@
         <!-- Main Content -->
         <div class="flex-1 p-6 overflow-y-auto">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-semibold">Inventaris UKS</h2>
+                <h2 class="text-2xl font-semibold">Inventaris</h2>
                 <div class="flex gap-3">
-                    <input type="text" id="searchBar" placeholder="Cari obat..."
-                        class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                     <button onclick="openAddModal()"
                         class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition">
                         + Tambah Obat
                     </button>
+                    <input type="text" id="searchBar" placeholder="Cari inventaris..."
+                        class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                 </div>
             </div>
 
