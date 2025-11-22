@@ -25,10 +25,20 @@ class InventoryLog extends Model
         // updated case
         if ($this->action === 'updated' && array_key_exists('old', $this->changes) && array_key_exists('new', $this->changes)) {
             $output = [];
+            $ignored = ['updated_at', 'created_at', 'id'];
             foreach ($this->changes['new'] as $key => $newValue) {
+                if (in_array($key, $ignored, true)) {
+                    continue;
+                }
                 $oldValue = $this->changes['old'][$key] ?? null;
                 if ($oldValue != $newValue) {
-                    $output[] = "$key: $oldValue → $newValue";
+                    if ($key === 'expiry_date') {
+                        $oldFmt = $oldValue ? \Carbon\Carbon::parse($oldValue)->format('d M Y') : 'null';
+                        $newFmt = $newValue ? \Carbon\Carbon::parse($newValue)->format('d M Y') : 'null';
+                        $output[] = "Kadaluarsa: $oldFmt → $newFmt";
+                    } else {
+                        $output[] = "$key: $oldValue → $newValue";
+                    }
                 }
             }
 
