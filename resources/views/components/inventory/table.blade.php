@@ -3,7 +3,7 @@
         <thead class="border-b border-gray-200 text-gray-600">
             <tr class="text-left">
                 <th class="pb-3">ID</th>
-                <th class="pb-3">Nama Obat</th>
+                <th class="pb-3">Nama Barang</th>
                 <th class="pb-3">Kategori</th>
                 <th class="pb-3">Stok</th>
                 <th class="pb-3">Kadaluarsa</th>

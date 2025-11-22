@@ -1,7 +1,9 @@
 <div class="w-64 bg-[#0f172a] text-white flex flex-col p-5">
     <div class="flex items-center mb-8">
-        <div class="w-8 h-8 bg-indigo-600 rounded-full mr-2 flex items-center justify-center text-sm font-bold">UT</div>
-        <h4 class="text-xl font-semibold">U-Track</h4>
+        <a href="{{ route('dashboard') }}" class="flex items-center">
+            <img src="{{ asset('images/logo.png') }}" alt="U-Track" class="w-10 h-10 mr-3">
+            <h4 class="text-xl font-semibold">U-Track</h4>
+        </a>
     </div>
 
     <nav class="flex flex-col gap-2">

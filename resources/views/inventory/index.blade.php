@@ -15,7 +15,7 @@
                 <div class="flex gap-3">
                     <button onclick="openAddModal()"
                         class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition">
-                        + Tambah Obat
+                        + Tambah Barang
                     </button>
                     <input type="text" id="searchBar" placeholder="Cari inventaris..."
                         class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none">

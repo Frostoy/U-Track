@@ -16,6 +16,13 @@
         if (isset($changesArray['old']['name'], $changesArray['new']['name'])) {
             $formattedChanges[] = "Nama '{$changesArray['old']['name']}' -> '{$changesArray['new']['name']}'";
         }
+
+        // expiry_date changes: format as human readable dates
+        if (isset($changesArray['old']['expiry_date'], $changesArray['new']['expiry_date'])) {
+            $oldExp = $changesArray['old']['expiry_date'] ? \Carbon\Carbon::parse($changesArray['old']['expiry_date'])->format('d M Y') : 'null';
+            $newExp = $changesArray['new']['expiry_date'] ? \Carbon\Carbon::parse($changesArray['new']['expiry_date'])->format('d M Y') : 'null';
+            $formattedChanges[] = "Kadaluarsa: {$oldExp} -> {$newExp}";
+        }
     }
 
     $formattedChanges = implode(', ', $formattedChanges);
